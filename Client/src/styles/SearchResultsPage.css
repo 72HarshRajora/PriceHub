@@ -1,0 +1,99 @@
+/* PriceHub/Client/src/styles/SearchResultsPage.css */
+
+.search-page-layout {
+    display: flex;
+    gap: 30px;
+    padding-top: 30px;
+    min-height: 80vh;
+}
+
+/* --- Filters Sidebar (Left Column) --- */
+.filters-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    /* Dark Blue/Purple Gradient for Sidebar as requested */
+    background: linear-gradient(180deg, var(--secondary-dark), var(--primary-dark));
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    height: fit-content;
+    position: sticky;
+    top: 100px; /* Header ke neeche sticky rahega */
+}
+
+.filters-title {
+    color: var(--accent-purple);
+    font-size: 1.5em;
+    margin-bottom: 25px;
+    border-bottom: 2px solid var(--accent-purple);
+    padding-bottom: 10px;
+}
+
+.filter-group {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--secondary-dark);
+}
+
+.filter-group h3 {
+    color: var(--text-light);
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.platform-tag {
+    display: inline-block;
+    background-color: var(--accent-purple);
+    color: var(--text-light);
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 8px;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+.platform-note {
+    font-size: 0.75em;
+    color: var(--text-subtle);
+    margin-top: 10px;
+}
+
+/* --- Main Results Area (Right Column) --- */
+.main-results-area {
+    flex-grow: 1;
+}
+
+.results-heading {
+    font-size: 2em;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.results-heading strong {
+    color: var(--light-purple);
+}
+
+.data-note {
+    font-size: 0.9em;
+    color: var(--text-subtle);
+    margin-bottom: 30px;
+}
+
+/* --- Status Messages (Loading/Error/No Results) --- */
+.status-message {
+    text-align: center;
+    padding: 50px;
+    border-radius: 8px;
+    margin-top: 40px;
+    font-size: 1.2em;
+    color: var(--text-subtle);
+    background-color: var(--secondary-dark);
+}
+
+.loading-message {
+    color: var(--light-purple);
+}
+
+.error-message {
+    color: #ff6b6b; /* Reddish for errors */
+}

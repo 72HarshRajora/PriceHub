@@ -1,0 +1,77 @@
+/* PriceHub/Client/src/styles/Global.css */
+
+/* Custom CSS Variables (Aapke dark blue aur purple theme ke liye) */
+:root {
+    --primary-dark: #12121e; /* Dark Blue/Near Black */
+    --secondary-dark: #1e1e2d; /* Slightly Lighter Dark Blue */
+    --accent-purple: #9c27b0; /* Vibrant Purple */
+    --light-purple: #e0b0ff; /* Lighter Purple/Accent */
+    --text-light: #ffffff;
+    --text-subtle: #cccccc;
+    --max-width: 1200px;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-purple);
+}
+
+/* Scrollbar Styling (Thoda dark look ke liye) */
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--secondary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent-purple);
+    border-radius: 4px;
+}
+
+/* Utility Classes */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Custom CSS Spinner (Search Results Page ke liye) */
+.custom-spinner {
+    border: 4px solid var(--secondary-dark);
+    border-top: 4px solid var(--accent-purple);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 40px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* For Footer (inline in HomePage) */
+.sticky-footer {
+    background-color: var(--primary-dark);
+    color: var(--text-subtle);
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid var(--secondary-dark);
+    margin-top: 50px; 
+    width: 100%;
+}
