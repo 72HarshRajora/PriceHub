@@ -1,0 +1,257 @@
+/* PriceHub/Client/src/components/Header/Header.css */
+
+.main-header {
+    background-color: var(--secondary-dark); /* Dark background */
+    border-bottom: 2px solid var(--accent-purple); /* Purple line */
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* --- Logo Styling --- */
+.header-logo {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--text-light); /* White text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Search Widget Styling --- */
+.search-widget {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 600px;
+    gap: 10px;
+}
+
+.select-group {
+    display: flex;
+    gap: 5px;
+    /* Mobile fix */
+    flex-shrink: 0;
+}
+
+.platform-select {
+    padding: 8px 12px;
+    border: 1px solid var(--accent-purple);
+    border-radius: 6px;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.platform-select:focus {
+    outline: none;
+    border-color: var(--light-purple);
+}
+
+/* 🛠️ UPDATED: Input aur Button ko ek line mein laane ke liye */
+.search-input-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex; /* Flex container banaya */
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px 15px;
+    /* Search button ke liye right padding diya */
+    padding-right: 45px; 
+    border: 1px solid var(--secondary-dark);
+    border-radius: 6px;
+    background-color: var(--primary-dark);
+    color: var(--text-light);
+    font-size: 1em;
+    transition: border-color 0.3s;
+    /* Button ko attach karne ke liye */
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.5); /* Purple shadow */
+}
+
+/* 🛠️ NEW: Search Button Styling */
+.search-button {
+    background-color: var(--accent-purple);
+    color: var(--text-light);
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 0 6px 6px 0; /* Corner round kiya */
+    margin-left: -1px; /* Overlap border */
+    font-size: 1em;
+}
+
+.search-button:hover {
+    background-color: #a740bb;
+    box-shadow: 0 0 8px rgba(156, 39, 176, 0.5);
+}
+
+
+/* --- Search History Dropdown (Same) --- */
+.search-history-dropdown {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    right: 0;
+    background-color: var(--secondary-dark);
+    border: 1px solid var(--accent-purple);
+    border-top: none;
+    list-style: none;
+    padding: 0;
+    margin-top: 2px;
+    z-index: 1010;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.history-title {
+    padding: 8px 15px;
+    font-weight: bold;
+    color: var(--accent-purple);
+    cursor: default;
+}
+
+.search-history-dropdown li {
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: var(--text-subtle);
+    transition: background-color 0.2s, color 0.2s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search-history-dropdown li:hover {
+    background-color: rgba(156, 39, 176, 0.2); 
+    color: var(--text-light);
+}
+
+/* --- Navigation & Drawer Styling (Same) --- */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--text-subtle);
+    padding: 5px 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--light-purple);
+}
+
+.nav-link-dropdown {
+    position: relative;
+}
+
+.categories-drawer {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-dark);
+    border: 1px solid var(--accent-purple);
+    border-top: none;
+    min-width: 150px;
+    padding: 10px 0;
+    z-index: 1020;
+    border-radius: 0 0 6px 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer-link {
+    padding: 8px 15px;
+    color: var(--text-light);
+    transition: background-color 0.2s;
+}
+
+.drawer-link:hover {
+    background-color: rgba(156, 39, 176, 0.2);
+}
+
+/* --- Login Button (Shine Effect) (Same) --- */
+.login-button {
+    background-color: var(--accent-purple);
+    color: var(--text-light);
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.login-button:hover {
+    background-color: #a740bb;
+    box-shadow: 0 0 15px var(--accent-purple);
+}
+
+.login-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: skewX(-30deg);
+    transition: all 0.8s;
+}
+
+.login-button:hover::before {
+    left: 100%;
+}
+
+/* --- Filter Bar Styling (Same) --- */
+.filter-bar {
+    padding-top: 10px;
+}
+
+.filter-toggle-button {
+    background: none;
+    border: 1px solid var(--accent-purple);
+    color: var(--text-light);
+    padding: 8px 15px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.9em;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.filter-toggle-button:hover {
+    background-color: rgba(156, 39, 176, 0.2);
+    box-shadow: 0 0 8px rgba(156, 39, 176, 0.5);
+}
+
+.swap-icon {
+    margin: 0 10px;
+    color: var(--light-purple);
+}
